@@ -156,7 +156,8 @@ export function SignUpForm() {
               )}
             />
             <FormField
-  s            control={form.control}
+            
+              control={form.control}
               name="Password"
               render={({ field }) => (
                 <FormItem className="flex-1">
@@ -170,13 +171,9 @@ export function SignUpForm() {
               )}
             />
           </CardContent>
-          <CardFooter className="flex ">
-            <Button  type="submit" className="w-56">
-              Cancel
-            </Button>
-            <Button type="submit" className="w-56">
-              Submit
-            </Button>
+          <CardFooter className="flex justify-between ">
+            <Button variant="outline">Cancel</Button>
+            <Button type="submit">Submit</Button>
           </CardFooter>
         </form>
       </Form>
