@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "dateOfBirth": "1990-01-01",
+      "phoneNumber": "1234567890",
+      "country": "USA",
+      "city": "New York",
+      "password": "password123",
+      "id": "a77a"
+    },
+    {
+      "id": "b8b1",
+      "name": "Divyas",
+      "email": "divineleo20@gmail.com",
+      "dateOfBirth": "2024-08-29",
+      "phoneNumber": "9300019909",
+      "country": "India",
+      "city": "Bangalore",
+      "password": "Passowrd"
+    },
+    {
+      "id": "fa33",
+      "name": "Shradha",
+      "email": "admin@admin.com",
+      "dateOfBirth": "1996-01-30",
+      "phoneNumber": "7760523496",
+      "country": "India",
+      "city": "Bangalore",
+      "password": "dummyi"
+    }
+  ]
+}

@@ -11,14 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -30,6 +22,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import createUser from "@/actions/create-user";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -38,7 +31,7 @@ const formSchema = z.object({
   phoneNumber: z.string().min(10).max(10),
   country: z.string().min(2).max(50),
   city: z.string().min(2).max(50),
-  Password: z.string().min(6).max(50),
+  password: z.string().min(6).max(50),
 });
 
 export function SignUpForm() {
@@ -51,14 +44,18 @@ export function SignUpForm() {
       dateOfBirth: "",
       phoneNumber: "",
       city: "",
-      Password: "",
+      password: "",
     },
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
+
+    const res = await createUser(values)
     // ✅ This will be type-safe and validated.
+
+
     console.log(values);
   }
 
@@ -158,7 +155,7 @@ export function SignUpForm() {
             <FormField
             
               control={form.control}
-              name="Password"
+              name="password"
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel>Password</FormLabel>
