@@ -1,7 +1,8 @@
 "use client";
-import { z } from "zod";
-
+import { z } from "zod"
 import { Button } from "@/components/ui/button";
+import React from 'react';
+import styles from './s.module.css';
 import {
   Card,
   CardContent,
@@ -44,6 +45,7 @@ export function SignUpForm() {
       dateOfBirth: "",
       phoneNumber: "",
       city: "",
+      country: "",
       password: "",
     },
   });
@@ -53,10 +55,8 @@ export function SignUpForm() {
     // Do something with the form values.
 
     const res = await createUser(values)
-    // ✅ This will be type-safe and validated.
+    
 
-
-    console.log(values);
   }
 
   return (
@@ -73,94 +73,94 @@ export function SignUpForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                 <FormLabel><div style={{display:'flex'}}>Name<h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="Name" {...field} />
+                    <Input className={styles.textbox} placeholder="Name" {...field} />
                   </FormControl>
 
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /><br/>
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email ID</FormLabel>
+                  <FormLabel><div style={{display:'flex'}} > Email ID <h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="Email ID" {...field} />
+                    <Input className={styles.textbox} placeholder="Email ID" {...field} />
                   </FormControl>
 
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /><br/>
             <FormField
               control={form.control}
               name="dateOfBirth"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel>Date Of Birth</FormLabel>
+                  <FormLabel><div style={{display:'flex'}}>Date Of Birth<h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="Date of Birth" type="date" {...field} />
+                    <Input className={styles.textbox} placeholder="Date of Birth" type="date" {...field} />
                   </FormControl>
 
                   <FormMessage />
                 </FormItem>
               )}
-            />{" "}
+            />{" "}<br/>
             <FormField
               control={form.control}
               name="phoneNumber"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel>Phone Number</FormLabel>
+                  <FormLabel><div style={{display:'flex'}}>Phone Number<h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="Phone Number" type="tel" {...field} />
+                    <Input className={styles.textbox} placeholder="Phone Number" type="tel" {...field} />
                   </FormControl>
 
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /><br/>
             <FormField
               control={form.control}
               name="city"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>City</FormLabel>
+                  <FormLabel><div style={{display:'flex'}}>City<h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="City" {...field} />
+                    <Input className={styles.textbox} placeholder="City" {...field} />
                   </FormControl>
 
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /><br/>
             <FormField
               control={form.control}
               name="country"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Country</FormLabel>
+                  <FormLabel><div style={{display:'flex'}}>Country<h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="Country" {...field} />
+                    <Input className={styles.textbox} placeholder="Country" {...field} />
                   </FormControl>
 
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /><br/>
             <FormField
             
               control={form.control}
               name="password"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel><div style={{display:'flex'}}>Password<h1 style={{color:"#D70000"}}>*</h1></div></FormLabel>
                   <FormControl>
-                    <Input placeholder="Password" {...field} />
+                    <Input className={styles.textbox} type="password" placeholder="Password" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -169,8 +169,9 @@ export function SignUpForm() {
             />
           </CardContent>
           <CardFooter className="flex justify-between ">
-            <Button variant="outline">Cancel</Button>
-            <Button type="submit">Submit</Button>
+           
+            <Button className={styles.submitbutton} type="submit">Submit</Button>
+            <Button className={styles.cancelbutton}variant="outline">Cancel</Button>
           </CardFooter>
         </form>
       </Form>

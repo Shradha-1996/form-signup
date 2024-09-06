@@ -29,6 +29,26 @@
       "country": "India",
       "city": "Bangalore",
       "password": "dummyi"
+    },
+    {
+      "id": "f45e",
+      "name": "shradha1",
+      "email": "techmemeber@techmemeber.com",
+      "dateOfBirth": "2024-08-29",
+      "phoneNumber": "9019920293",
+      "country": "India",
+      "city": "Bangalore",
+      "password": "password"
+    },
+    {
+      "id": "fe7c",
+      "name": "dviya",
+      "email": "techmemeber@techmemeber.com",
+      "dateOfBirth": "2024-09-07",
+      "phoneNumber": "9019920271",
+      "country": "India",
+      "city": "Bangalore",
+      "password": "dwdwdwdw"
     }
   ]
 }
