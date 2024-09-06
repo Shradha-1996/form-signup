@@ -22,7 +22,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import createUser from "@/actions/create-user";
+import { createUserAction } from "@/actions/create-user";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -35,6 +36,8 @@ const formSchema = z.object({
 });
 
 export function SignUpForm() {
+  const router = useRouter();
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -52,9 +55,9 @@ export function SignUpForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
 
-    const res = await createUser(values)
+    const res = await createUserAction(values);
     // ✅ This will be type-safe and validated.
-
+    router.push("/dashboard");
 
     console.log(values);
   }
@@ -153,7 +156,6 @@ export function SignUpForm() {
               )}
             />
             <FormField
-            
               control={form.control}
               name="password"
               render={({ field }) => (

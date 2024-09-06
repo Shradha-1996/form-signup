@@ -1,12 +1,4 @@
-
-
 export default function Home() {
-  return (
-
-    <div className="flex justify-center items-center">
-
-    Hello
-    </div>
-
-  );
+  return <div className="flex justify-center items-center">Hello</div>;
 }
+function UsersList() {}
